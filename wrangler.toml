@@ -1,0 +1,30 @@
+name = "twitter-bot-dashboard"
+main = "src/index.ts"
+compatibility_date = "2024-12-30"
+workers_dev = false
+routes = [
+  { pattern = "twitter.hwmnbn.me", custom_domain = true }
+]
+
+# D1 Database
+[[d1_databases]]
+binding = "DB"
+database_name = "twitter-bot-db"
+database_id = "c3b04aea-9ca4-4092-bfc4-7628fad31aa3"
+
+# Workers AI
+[ai]
+binding = "AI"
+
+# KV for session storage
+[[kv_namespaces]]
+binding = "SESSIONS"
+id = "8964cb12ab5a49afaba10510773d6ec6"
+
+# Environment variables
+[vars]
+ENVIRONMENT = "development"
+
+# Static assets for dashboard
+[assets]
+directory = "./public"
